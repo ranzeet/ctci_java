@@ -1,0 +1,20 @@
+public class Two_a {
+	static String sort(String s) {
+		char[] content = s.toCharArray();
+		java.util.Arrays.sort(content);
+		return new String(content);
+	}
+
+	static boolean permutation(String s, String t) {
+		if (s.length() != t.length()) return false;
+		
+		return sort(s).equals(sort(t));
+	}
+	
+	public static void main (String []argr) {
+		String str1 = "Ranjeet";
+		String str2 = "anjReet";
+		
+		System.out.println(str2 +" and "+ str1 + " are permutation: "+ permutation(str1, str2));	
+	}
+}

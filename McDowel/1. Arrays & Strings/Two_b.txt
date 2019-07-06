@@ -1,0 +1,23 @@
+public class Two_b {
+	static boolean permutation(String s, String t) {
+		if (s.length() != t.length()) return false;
+		
+		int[] letters = new int[128];
+		char[] s_array = s.toCharArray();
+		for (char c : s_array) letters[c]++;
+
+		for (int i = 0; i < t.length(); i++) {
+			int c = t.charAt(i);
+			letters[c]--;
+			if (letters[c] < 0)
+				return false;
+		}
+		return true;
+	}
+	public static void main (String []argr) {
+		String str1 = "Ranjeet";
+		String str2 = "anjReet";
+		
+		System.out.println(str2 +" and "+ str1 + " are permutation: "+ permutation(str1, str2));	
+	}
+}

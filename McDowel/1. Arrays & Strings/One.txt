@@ -1,0 +1,21 @@
+import java.util.*;
+public class One {
+	static String isUnique(String str) {
+		char chr[] = str.toCharArray();
+		HashMap<Character, Integer> hm = new HashMap<Character, Integer>();
+		for (char ch : chr) {
+			if (hm.get(ch) != null && hm.get(ch) >= 1)
+				return "doesn't have unique";
+			else if (hm.get(ch) == null)
+				hm.put(ch,1);
+			else
+				hm.put(ch,hm.get(ch)+1);
+		}
+		return "has unique";
+	}
+	
+	public static void main (String[] argr) {
+		String str = "ranjeet";
+		System.out.println("The input string \"" + str +"\" " + isUnique(str) + " characters.");
+	}
+}

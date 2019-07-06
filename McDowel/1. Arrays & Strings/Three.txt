@@ -1,0 +1,12 @@
+public class Three {
+	static String urlify(String inp, int len) {
+		return inp.trim().replaceAll(" ","%20");
+	}
+
+	public static void main (String []argr) {
+		String str = "Mr John Smith    ";
+		int true_len = 13;
+		
+		System.out.println(urlify(str, true_len));
+	}
+}

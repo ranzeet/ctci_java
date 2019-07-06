@@ -1,0 +1,18 @@
+//This is an approach in C++ Using Pass By Reference
+
+node* nthToLast(node* head, int k, int& i) {
+	if (head == NULL) {
+		return 0;
+	}
+	node* nd = nthToLast(head->next, i);
+	i += 1;
+	if (i == k) {
+		return head;
+	}
+	return nd;
+}
+
+node* nthToLast(node* head, int k) {
+	int i = 0;
+	return nthToLast(head, k, i);
+}

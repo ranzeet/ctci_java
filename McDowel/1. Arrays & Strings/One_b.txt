@@ -1,0 +1,22 @@
+public class One_b {
+	static boolean isUniqueChars(String str) {
+		if (str.length() > 128) return false;
+
+		int checker = 0;
+		for (int i = 0; i < str.length(); i++) {
+			int val = str.charAt(i) - 'a';
+			if((checker & (1 << val)) > 0) {
+				return false;
+			}
+			checker |= (1 << val);
+		}
+		return true;
+	}
+	public static void main (String[] argr) {
+		String str = "Ranjeet";
+		if (isUniqueChars(str))
+			System.out.println("The input string '"+str+"' has unique characters");
+		else
+			System.out.println("The input string '"+str+"' doesn't has unique characters");
+	}
+}
